@@ -1,0 +1,32 @@
+@(actions: scala.List[dto.Action])
+
+@import dto.Action
+
+@main {
+
+    <h1>Action Table</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+                <th>ID</th>
+                <th>Assignee</th>
+                <th>Name</th>
+                <th>Created Date</th>
+                <th>Due Date</th>
+        </thead>
+        <tbody>
+            @for(action <- actions ) {
+                <tr>
+                    <td>@action.getId</td>
+                    <td>@action.getAssignee</td>
+                    <td>@action.getName</td>
+                    <td>@action.getCreatedDate</td>
+                    <td>@action.getDueDate</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+
+}
