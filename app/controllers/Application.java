@@ -15,7 +15,13 @@ public class Application extends Controller {
     public static Result index() {
 
 
-        return ok(index.render(JavaConverters.asScalaBufferConverter(dto.Action.getMockActions(10)).asScala().toList()));
+        return ok(index.render());
+    }
+
+    public static Result actions() {
+
+
+        return ok(actions.render(JavaConverters.asScalaBufferConverter(dto.Action.getMockActions(10)).asScala().toList()));
     }
 
 }
